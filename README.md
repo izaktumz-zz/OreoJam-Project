@@ -29,7 +29,7 @@ OR
 -dataRepo.AddItem("item you want to add.This corresponds to a table in the Db")
 
 
--dataRepo.AddItems("items you want to add.This corresponds to a table in the Db").This is a batch operation
+-dataRepo.AddItems("list of items you want to add.This corresponds to a table in the Db").This is a batch operation
 
 # Delete an Item
 -dataRepo.DeleteItem("item you want to delete.This corresponds to a table in the Db")
