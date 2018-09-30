@@ -13,7 +13,6 @@ OR
 
 -One can perform batch or atomic operations against your Db as seen fit
 
--The AddItem,DeleteItem and UpdateItem returns true if it was a success otherwise false.
 
 # NB
 -If lazy loading is enabled.Subsequent tables will be retrieved.
