@@ -26,9 +26,9 @@ Var dataRepo = new DevRepo<"Your DbContext Class">(new "Your DbContext Class");
 
 # Usage
 # Adding Item(s)
--dataRepo.AddItem("contains the no of item/table(s) you want to add to the database")
+-dataRepo.AddItem("contains the no of item/table(s) you want to add to the database").The items can be different or the same.ie.adding data to different tables at once.
 
--dataRepo.AddItem("new Item1(),new Iteme2(),new Item3(){}..up to 7")
+-dataRepo.AddItem("new Item1(),new Item2(),new Item3(){}..up to 7")
 
 -Maximum no of items that can be added at once is 7.At the  moment minimum is 1.
 
