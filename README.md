@@ -31,7 +31,7 @@ OR
 
 -dataRepo.AddItem("new Table1(),new Table2(),new Table3(){}..up to 7")
 
--Maximum no of tables that can be added at once is 7 at the  moment.Minimum is 1.
+-Maximum no of tables that can be added at once is 7.At the  moment minimum is 1.
 
 -Once done call dataRepo.CommitChanges() or dataRepo.CommitChangesAsync()
 
