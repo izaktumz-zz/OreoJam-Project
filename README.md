@@ -29,18 +29,18 @@ OR
 # Adding Item(s)
 -dataRepo.AddItem("contains the no of item/table(s) you want to add to the database")
 
--dataRepo.AddItem("new Table1(),new Table2(),new Table3(){}..up to 7")
+-dataRepo.AddItem("new Item1(),new Iteme2(),new Item3(){}..up to 7")
 
--Maximum no of tables that can be added at once is 7.At the  moment minimum is 1.
+-Maximum no of items that can be added at once is 7.At the  moment minimum is 1.
 
--Once done call dataRepo.CommitChanges() or dataRepo.CommitChangesAsync()
+-Once done call dataRepo.CommitChanges() or dataRepo.CommitChangesAsync() for changes to take effect
 
 # Delete/Update an Item(s)
 -dataRepo.Update("Item you want to update","status for the update i.e. d for delete and m for  modify")
 
 -dataRepo.UpdateChanges("List of Items you want to update","status for the update i.e. d for delete and m for  modify")
 
--Once done call dataRepo.CommitChanges() or dataRepo.CommitChangesAsync()
+-Once done call dataRepo.CommitChanges() or dataRepo.CommitChangesAsync()  for changes to take effect
 
 # Retrieving Item(s) From The Db
 --dataRepo.GetItem<"Item/Table you want to retrieve">("The lambda expression/Criteria for retrieval i.e (x=>x.id ==1)").It retrieves a single item(i.e. one row from the Table based on the criteria you have given it)
