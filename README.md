@@ -19,6 +19,8 @@ OR
 
 -All the Changes take effect after calling the dataRepo.CommitChanges()/dataRepo.CommitChangesAsync() method.
 
+-For maximum performance,call the dataRepo.CommitChanges() after you are done with all the db interactions i.e Adding items and updating items.
+
 # Initialization
 -Create an instance of the class and pass it your Database in the parameters.
 
