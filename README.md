@@ -22,8 +22,7 @@ OR
 # Initialization
 -Create an instance of the class and pass it your Database in the parameters.
 
-
--DevRepo<"Your DbContext Class"> dataRepo = new DevRepo<"Your DbContext Class">(new "Your DbContext Class");
+Var dataRepo = new DevRepo<"Your DbContext Class">(new "Your DbContext Class");
 
 # Usage
 # Adding Item(s)
