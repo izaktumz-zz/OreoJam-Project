@@ -2,7 +2,7 @@
 A Lightweight .NET Package for CRUD(Create,Read,Update,Delete) methods against a DbContext Database.
 
 # Installation
-->The Package can be found in Nuget Manager.Such OreoJam
+->The Package can be found in Nuget Manager.Search OreoJam
 
 OR
 
