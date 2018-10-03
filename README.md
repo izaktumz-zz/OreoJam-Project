@@ -22,7 +22,7 @@ OR
 -For maximum performance,call the dataRepo.CommitChanges() after you are done with all the db interactions i.e Adding items and updating items.
 
 # Initialization
--Create an instance of the class and pass it your Database in the parameters.
+-Create an instance of the class,pass it your Database in the parameters and you are ready to go.(Create,Add,Delete or Update any item in your database)
 
 Var dataRepo = new DevRepo<"Your DbContext Class">(new "Your DbContext Class");
 
