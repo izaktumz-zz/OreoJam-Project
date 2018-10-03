@@ -24,7 +24,7 @@ OR
 # Initialization
 -Create an instance of the class,pass it your Database in the parameters and you are ready to go.(Create,Add,Delete or Update any item in your database)
 
-Var dataRepo = new DevRepo<"Your DbContext Class">(new "Your DbContext Class");
+Var dataRepo = new DevRepo<"Your DbContext Class/DB">(new "Your DbContext Class/DB");
 
 # Usage
 # Adding Item(s)
