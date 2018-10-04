@@ -17,10 +17,6 @@ OR
 # NB
 -If lazy loading is enabled.Subsequent tables will be retrieved.
 
--All the Changes take effect after calling the dataRepo.CommitChanges()/dataRepo.CommitChangesAsync() method.
-
--For maximum performance,call the dataRepo.CommitChanges() after you are done with all the db interactions i.e Adding items and updating items.
-
 # Initialization
 -Create an instance of the class,pass it your Database in the parameters and you are ready to go.(Create,Add,Delete or Update any item in your database)
 
@@ -28,29 +24,26 @@ Var dataRepo = new DevRepo<"Your DbContext Class/DB">(new "Your DbContext Class/
 
 # Usage
 # Adding Item(s)
--dataRepo.AddItem("contains the no of item/table(s) you want to add to the database").The items can be different or the same.ie.adding data to different tables at once.
+-dataRepo.AddItem("Item you want to add to the database").
 
--dataRepo.AddItem("new Item1(),new Item2(),new Item3(){}..up to 7")
-
--Maximum no of items that can be added at once is 7.At the  moment minimum is 1.
-
--Once done call dataRepo.CommitChanges() or dataRepo.CommitChangesAsync() for changes to take effect
+-dataRepo.AddItems("List of Items you want to add to the database").
 
 # Delete/Update an Item(s)
--dataRepo.Update("Item you want to update","status for the update i.e. d for delete and m for  modify")
+-dataRepo.UpdateItem("Item you want to update")
 
--dataRepo.UpdateChanges("List of Items you want to update","status for the update i.e. d for delete and m for  modify")
+-dataRepo.UpdateItems("List of Items you want to update")
 
--Once done call dataRepo.CommitChanges() or dataRepo.CommitChangesAsync()  for changes to take effect
 
 # Retrieving Item(s) From The Db
---dataRepo.GetItem<"Item/Table you want to retrieve">("The lambda expression/Criteria for retrieval i.e (x=>x.id ==1)").It retrieves a single item(i.e. one row from the Table based on the criteria you have given it)
+--dataRepo.GetItem<"Item/Table you want to retrieve">("The lambda expression/Criteria for retrieval i.e (x=>x.id ==1)").It retrieves a single item(i.e. one row from the Table based on the criteria you have given it).Returns a List
 
---dataRepo.GetItems<"Item/Table you want to retrieve">("The lambda expression/Criteria for retrieval i.e (x=>x.id >1 && x.status !='D' )").It retrieves many items/Rows(i.e. many rows from the Table based on the criteria you have given it)
+--dataRepo.GetItems<"Item/Table you want to retrieve">("The lambda expression/Criteria for retrieval i.e (x=>x.id >1 && x.status !='D' )").It retrieves many items/Rows(i.e. many rows from the Table based on the criteria you have given it).Returns a List
+
+---dataRepo.GetItemsIqueryable<"Item/Table you want to retrieve">("The lambda expression/Criteria for retrieval i.e (x=>x.id >1 && x.status !='D' )").It retrieves many items/Rows(i.e. many rows from the Table based on the criteria you have given it).Returns an IQueryable
 
 # Commit Changes to The Db.
 
--dataRepo.CommitChanges()-commits all your changes to the DB Synchronously.
+-Changes are committed to the database every time you call a CRUD Method(Create,Read,Update,Delete).
 
--dataRepo.CommitChangesAsync()-commits all your changes to the DB ASynchronously.
+
 
