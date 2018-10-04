@@ -33,6 +33,10 @@ Var dataRepo = new DevRepo<"Your DbContext Class/DB">(new "Your DbContext Class/
 
 -dataRepo.UpdateItems("List of Items you want to update")
 
+-dataRepo.DeleteItem("Item you want to delete")
+
+-dataRepo.DeleteItems("List of Items you want to delete")
+
 
 # Retrieving Item(s) From The Db
 --dataRepo.GetItem<"Item/Table you want to retrieve">("The lambda expression/Criteria for retrieval i.e (x=>x.id ==1)").It retrieves a single item(i.e. one row from the Table based on the criteria you have given it).Returns a List
