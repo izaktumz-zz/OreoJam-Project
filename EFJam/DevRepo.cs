@@ -38,98 +38,41 @@ namespace OreoJam
         {
             return db.Set<T>().FirstOrDefault(predicate);      
         }
-        public void Update<T>(T data,string status) where T:class
+        public void UpdateItem<T>(T data) where T:class
         {
-            switch (status)
-            {
-                case "d":
-                    db.Entry(data).State = EntityState.Deleted;
-                    break;
-                case "m":
-                    db.Entry(data).State = EntityState.Modified;
-                    break;
-                default:
-                    break;
-            }
-
-        }
-        public void UpdateChanges<T>(List<T> data, string status) where T:class
-        {
-            switch (status)
-            {
-
-                case "d":
-                    foreach (var item in data)
-                    {
-                        db.Entry(item).State = EntityState.Deleted;
-                    }  
-                    break;
-                case "m":
-                    foreach (var item in data)
-                    {
-                        db.Entry(item).State = EntityState.Modified;
-                    }     
-                    break;
-                default:
-                    break;
-            }
-        }  
-        public void Add<TItem1>(TItem1 t1) where TItem1:class
-        {
-            db.Set<TItem1>().Add(t1);
-        }
-        public void Add<TItem1, TItem2>(TItem1 t1,TItem2 t2) where TItem1:class where TItem2:class
-        {
-            db.Set<TItem1>().Add(t1);
-            db.Set<TItem2>().Add(t2);
-        }
-        public void Add<TItem1, TItem2,TItem3>(TItem1 t1, TItem2 t2, TItem3 t3) where TItem1 : class where TItem2:class where TItem3:class
-        {
-            db.Set<TItem1>().Add(t1);
-            db.Set<TItem2>().Add(t2);
-            db.Set<TItem3>().Add(t3);
-        }
-        public void Add<TItem1, TItem2, TItem3,TItem4>(TItem1 t1, TItem2 t2, TItem3 t3,TItem4 t4) where TItem1 : class where TItem2 : class where TItem3 : class where TItem4:class
-        {
-            db.Set<TItem1>().Add(t1);
-            db.Set<TItem2>().Add(t2);
-            db.Set<TItem3>().Add(t3);
-            db.Set<TItem4>().Add(t4);
-        }
-        public void Add<TItem1, TItem2, TItem3, TItem4,TItem5>(TItem1 t1, TItem2 t2, TItem3 t3,TItem4 t4,TItem5 t5) where TItem1 : class where TItem2 : class where TItem3 : class where TItem4:class where TItem5:class
-        {
-            db.Set<TItem1>().Add(t1);
-            db.Set<TItem2>().Add(t2);
-            db.Set<TItem3>().Add(t3);
-            db.Set<TItem4>().Add(t4);
-            db.Set<TItem5>().Add(t5);
-        }
-        public void Add<TItem1, TItem2, TItem3, TItem4, TItem5,TItem6>(TItem1 t1, TItem2 t2, TItem3 t3, TItem4 t4, TItem5 t5, TItem6 t6) where TItem1 : class where TItem2 : class where TItem3 :class where TItem4 : class where TItem5 : class  where TItem6:class
-        {
-            db.Set<TItem1>().Add(t1);
-            db.Set<TItem2>().Add(t2);
-            db.Set<TItem3>().Add(t3);
-            db.Set<TItem4>().Add(t4);
-            db.Set<TItem5>().Add(t5);
-            db.Set<TItem6>().Add(t6);
-        }
-        public void Add<TItem1, TItem2, TItem3, TItem4, TItem5, TItem6,TITem7>(TItem1 t1, TItem2 t2, TItem3 t3, TItem4 t4, TItem5 t5, TItem6 t6,TITem7 t7) where TItem1 : class where TItem2 : class where TItem3 : class where TItem4 : class where TItem5 : class where TItem6 : class where TITem7:class
-        {
-            db.Set<TItem1>().Add(t1);
-            db.Set<TItem2>().Add(t2);
-            db.Set<TItem3>().Add(t3);
-            db.Set<TItem4>().Add(t4);
-            db.Set<TItem5>().Add(t5);
-            db.Set<TItem6>().Add(t6);
-            db.Set<TITem7>().Add(t7);
-        }
-        public void CommitChanges()
-        {
+            db.Entry(data).State = EntityState.Modified;
             db.SaveChanges();
         }
-        public async Task CommitChangesAsync()
+        public void UpdateItems<T>(List<T> data) where T : class
         {
-            await db.SaveChangesAsync();
+            foreach (var item in data)
+            {
+                db.Entry(item).State = EntityState.Modified;
+            }
+            db.SaveChanges();
+        }
+        public void DeleteItem<T>(T data) where T : class
+        {
+            db.Entry(data).State = EntityState.Deleted;
+            db.SaveChanges();
+        }
+        public void DeleteItems<T>(List<T> data) where T : class
+        {
+            foreach (var item in data)
+            {
+                db.Entry(item).State = EntityState.Deleted;
+            }
+            db.SaveChanges();
+        }
+        public void AddItem<T>(T data) where T : class
+        {
+            db.Entry(data).State = EntityState.Deleted;
+            db.SaveChanges();
+        }
+        public void AddItems<T>(List<T> data) where T : class
+        {
+            db.Set<T>().AddRange(data);
+            db.SaveChanges();
         }
         #endregion
     }
