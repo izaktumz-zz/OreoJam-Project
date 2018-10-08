@@ -47,7 +47,7 @@ Var dataRepo = new DevRepo<"Your DbContext Class/DB">(new "Your DbContext Class/
 
 # Commit Changes to The Db.
 
--Changes are committed to the database every time you call a CRUD Method(Create,Read,Update,Delete).
+-Changes are committed to the database after you call a CRUD Method(Create,Read,Update,Delete).
 
 
 
