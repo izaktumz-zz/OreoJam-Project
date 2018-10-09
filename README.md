@@ -43,7 +43,6 @@ Var dataRepo = new DevRepo<"Your DbContext Class/DB">(new "Your DbContext Class/
 
 --dataRepo.GetItems<"Item/Table you want to retrieve">("The lambda expression/Criteria for retrieval i.e (x=>x.id >1 && x.status !='D' )").It retrieves many items/Rows(i.e. many rows from the Table based on the criteria you have given it).Returns a List
 
----dataRepo.GetItemsIqueryable<"Item/Table you want to retrieve">("The lambda expression/Criteria for retrieval i.e (x=>x.id >1 && x.status !='D' )").It retrieves many items/Rows(i.e. many rows from the Table based on the criteria you have given it).Returns an IQueryable
 
 # Commit Changes to The Db.
 
